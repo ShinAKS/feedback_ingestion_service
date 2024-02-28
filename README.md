@@ -20,8 +20,23 @@ Feedback ingestion from various sources, currently supports tweets and Zendesk s
 | `endTime` | `string` | **Optional**. Specifies end time for posts. If not specified, fetches all the posts till end of time |
 | `postType` | `string` | **Optional**. Possible values are `TWEET` or `ZENDESK` |
 
-##### Sample Req - Res:
+##### Sample Request:
 
+```
+curl --location 'localhost:8080/posts?startTime=2024-02-25T00%3A00%3A00&endTime=2024-02-26T00%3A00%3A00&postType=ZENDESK'
+```
+
+#### Get Posts for a conversation id
+
+```http
+  GET /conversations/${id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. Conversation id  |
+
+Req - Res
 ```
 curl --location 'localhost:8080/conversations/123456789'
 ```
